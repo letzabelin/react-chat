@@ -1,12 +1,10 @@
 import React from 'react';
-import './App.css';
+import { Auth } from 'pages';
 
-function App() {
-  return (
-    <div className="wrapper">
-      Hello, Worlds!
-    </div>
-  );
-}
+const App = () => (
+  <div className="wrapper">
+    <Auth />
+  </div>
+);
 
 export default App;
