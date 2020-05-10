@@ -1,12 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import cn from 'classnames';
-import { Button as BaseBUtton } from 'antd';
+import { Button as BaseButton } from 'antd';
 
 import './Button.scss';
 
 const Button = (props) => (
-  <BaseBUtton
+  <BaseButton
     {...props}
     className={cn(
       'button',

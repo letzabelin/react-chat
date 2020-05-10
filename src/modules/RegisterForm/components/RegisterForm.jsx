@@ -5,7 +5,7 @@ import { Button, Block } from 'components';
 import { UserOutlined, LockOutlined, MailOutlined, CheckCircleTwoTone } from '@ant-design/icons';
 
 const LoginForm = () => {
-  let isRegistred = true;
+  let isRegistred = false;
 
   return (
     <>
