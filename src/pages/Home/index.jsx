@@ -16,6 +16,7 @@ const Home = () => (
       text="Hi there what's up hello Hi there what's up hello Hi there what's up hello"
       date={new Date('May 10, 2020 19:20:00')}
       isMe={true}
+      isReaded={true}
     />
   </section>
 );

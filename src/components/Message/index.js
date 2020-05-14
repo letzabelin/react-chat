@@ -3,10 +3,11 @@ import ruLocale from 'date-fns/locale/ru';
 import formatDistanceToNow from 'date-fns/formatDistanceToNow';
 import PropTypes from 'prop-types';
 import cn from 'classnames';
+import readedSvg from 'assets/img/readed.svg';
 
 import './Message.scss';
 
-const Message = ({ avatar, user, text, date, isMe, ...props}) => (
+const Message = ({ avatar, user, text, date, isMe }) => (
   <div className={cn('message', { 'message--isme': isMe })}>
     <div className="message__avatar">
       <img src={avatar} alt={`Avatar ${user.fullname}`} />
