@@ -25,7 +25,7 @@ const RegisterForm = ({ handleBlur, values, handleSubmit, touched, handleChange,
         <Form onSubmit={handleSubmit} className="login-form">
           <Form.Item
             validateStatus={ !touched.email ? null : errors.email ? 'error' : 'success' }
-            help=""
+            help={ touched.email && errors.email }
             hasFeedback
           >
             <Input
@@ -49,7 +49,7 @@ const RegisterForm = ({ handleBlur, values, handleSubmit, touched, handleChange,
           </Form.Item>
           <Form.Item
             validateStatus={ !touched.password ? null : errors.password ? 'error' : 'success' }
-            help={ !touched.password ? '' : errors.password }
+            help={ touched.password && errors.password }
             hasFeedback
           >
             <Input
