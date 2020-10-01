@@ -1,10 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Form, Input } from 'antd';
-import { Button, Block } from 'components';
 import { UserOutlined, LockOutlined, MailOutlined, CheckCircleTwoTone } from '@ant-design/icons';
 
-let sucess = false;
+import { Button, Block } from 'components';
+import { validateField } from 'utils/helpers';
+
+let success = false;
 
 const RegisterForm = ({ handleBlur, values, handleSubmit, touched, handleChange, errors }) => (
   <>
@@ -13,7 +15,7 @@ const RegisterForm = ({ handleBlur, values, handleSubmit, touched, handleChange,
       <p>Для входа в чат Вам нужно зарегистрироваться</p>
     </div>
     <Block>
-      {sucess ? (
+      {success ? (
         <div className="auth__success-block">
           <div>
             <CheckCircleTwoTone style={{ fontSize: '48px' }} twoToneColor="#52c41a" />
@@ -23,9 +25,18 @@ const RegisterForm = ({ handleBlur, values, handleSubmit, touched, handleChange,
         </div>
       ) : (
         <Form onSubmit={handleSubmit} className="login-form">
+          <Form.Item>
+            <Input
+              prefix={<UserOutlined className="site-form-item-icon" />}
+              placeholder="Ваше имя"
+              type="username"
+              id="fullname"
+              size="large"
+            />
+          </Form.Item>
           <Form.Item
-            validateStatus={ !touched.email ? null : errors.email ? 'error' : 'success' }
-            help={ touched.email && errors.email }
+            validateStatus={validateField('email', touched, errors)}
+            help={touched.email && errors.email}
             hasFeedback
           >
             <Input
@@ -39,17 +50,9 @@ const RegisterForm = ({ handleBlur, values, handleSubmit, touched, handleChange,
               onBlur={handleBlur}
             />
           </Form.Item>
-          <Form.Item>
-            <Input
-              prefix={<UserOutlined className="site-form-item-icon" />}
-              placeholder="Ваше имя"
-              type="username"
-              size="large"
-            />
-          </Form.Item>
           <Form.Item
-            validateStatus={ !touched.password ? null : errors.password ? 'error' : 'success' }
-            help={ touched.password && errors.password }
+            validateStatus={validateField('password', touched, errors)}
+            help={touched.password && errors.password}
             hasFeedback
           >
             <Input
@@ -67,12 +70,13 @@ const RegisterForm = ({ handleBlur, values, handleSubmit, touched, handleChange,
             <Input
               prefix={<LockOutlined className="site-form-item-icon" />}
               type="password"
+              id="confirmed-password"
               placeholder="Повторите пароль"
               size="large"
             />
           </Form.Item>
           <Form.Item>
-            <Button type="primary" size="large">
+            <Button onClick={handleSubmit}type="primary" size="large">
               Зарегистрироваться
             </Button>
           </Form.Item>
