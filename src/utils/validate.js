@@ -2,9 +2,7 @@ export default ({ values, isAuth }) => {
   const errors = {};
 
   const rules = {
-    username: (value) => {
-
-    },
+    username: (value) => {},
     email: (value) => {
       if (!value) {
         errors.email = 'Введите E-mail';
