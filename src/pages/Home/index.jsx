@@ -1,7 +1,7 @@
 import React from 'react';
 
 import './Home.scss';
-import { Dialogs } from 'components';
+import { Dialogs, Message } from 'components';
 
 const Home = () => (
   <section className="home">
@@ -31,25 +31,12 @@ const Home = () => (
         },
       ]}
     />
-    {/* <Message */}
-    {/*   avatar="https://sun9-27.userapi.com/c857320/v857320608/146724/5n4o6A6TPsU.jpg?ava=1" */}
-    {/*   text="Hello my brother how are you" */}
-    {/*   date={new Date('May 10, 2020 18:00:00')} */}
-    {/*   attachments={[ */}
-    {/*     { */}
-    {/*       filename: 'image.jpg', */}
-    {/*       url: 'https://source.unsplash.com/100x100/?random=1&nature,water', */}
-    {/*     }, */}
-    {/*     { */}
-    {/*       filename: 'image.jpg', */}
-    {/*       url: 'https://source.unsplash.com/100x100/?random=2&nature,water', */}
-    {/*     }, */}
-    {/*     { */}
-    {/*       filename: 'image.jpg', */}
-    {/*       url: 'https://source.unsplash.com/100x100/?random=3&nature,water', */}
-    {/*     }, */}
-    {/*   ]} */}
-    {/* /> */}
+
+    <Message
+      avatar="https://sun9-27.userapi.com/c857320/v857320608/146724/5n4o6A6TPsU.jpg?ava=1"
+      date={new Date('May 10, 2020 18:00:00')}
+      audio="https://notificationsounds.com/storage/sounds/file-de_vuvuzela-power-down.mp3"
+    />
 
     {/* <Message */}
     {/*   avatar="https://sun9-70.userapi.com/c206720/v206720477/d701d/c8GI6Us7gCs.jpg?ava=1" */}

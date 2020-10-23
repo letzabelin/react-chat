@@ -11,10 +11,8 @@ const Dialogs = ({ dialogs, userId }) => (
         .map((dialog) => (
           <DialogItem
             key={dialog._id}
-            user={dialog.user}
-            message={dialog}
-            unreaded={0}
             isMe={dialog.user._id === userId}
+            { ...dialog }
           />
         ))
     }
