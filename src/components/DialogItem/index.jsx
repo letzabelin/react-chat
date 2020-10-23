@@ -2,8 +2,8 @@ import React from 'react';
 import cn from 'classnames';
 import format from 'date-fns/format';
 import isToday from 'date-fns/isToday';
-import isYesterday from 'date-fns/isYesterday';
 import isThisWeek from 'date-fns/isThisWeek';
+import isThisYear from 'date-fns/isThisYear';
 import ruLocale from 'date-fns/locale/ru';
 
 import { IconReaded } from '../';
@@ -23,14 +23,16 @@ const getAvatar = (avatar, fullname) => {
 const getMessageTime = (created_at) => {
   if (isToday(created_at)) {
     return format(created_at, 'HH:mm');
-  } else if (isYesterday(created_at) && isThisWeek(created_at)) {
+  } else if (!isToday(created_at) && isThisWeek(created_at)) {
     return format(created_at, 'EEEEEE', { locale: ruLocale });
+  } else if (!isThisYear(created_at)) {
+    return format(created_at, 'dd.MM.yyyy');
   }
 
-  return format(created_at, 'dd.MM.yyyy');
+  return format(created_at, 'dd.MM');
 };
 
-const DialogItem = ({ user, message, unreaded, isMe }) => (
+const DialogItem = ({ user, text, created_at, unread, isMe }) => (
   <div className={cn('dialogs__item', {
      'dialogs__item_online': user.isOnline
    })}>
