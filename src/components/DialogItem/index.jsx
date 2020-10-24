@@ -6,19 +6,8 @@ import isThisWeek from 'date-fns/isThisWeek';
 import isThisYear from 'date-fns/isThisYear';
 import ruLocale from 'date-fns/locale/ru';
 
-import { IconReaded } from '../';
+import { IconReaded, Avatar } from '../';
 import './DialogItem.scss';
-
-const getAvatar = (avatar, fullname) => {
-  if (avatar) {
-    return <img
-      src={avatar}
-      alt={fullname} 
-    />
-  } else {
-    // make avatar
-  }
-};
 
 const getMessageTime = (created_at) => {
   if (isToday(created_at)) {
@@ -37,7 +26,7 @@ const DialogItem = ({ user, text, created_at, unread, isMe }) => (
      'dialogs__item_online': user.isOnline
    })}>
     <div className="dialogs__item-avatar">
-      {getAvatar(user.avatar, user.fullname)}
+      <Avatar user={user} />
     </div>
 
     <div className="dialogs__item-info">

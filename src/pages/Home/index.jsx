@@ -20,13 +20,13 @@ const Home = () => (
           },
         },
         {
-          _id: Math.random(),
+          _id: '3dc0520def7ba25940a17438dcc4877b',
           text: 'Hi, how are you?',
           created_at: new Date(),
           user: {
             fullname: 'John Doe',
-            avatar: 'https://sun9-27.userapi.com/c857320/v857320608/146724/5n4o6A6TPsU.jpg?ava=1',
-            _id: 0,
+            avatar: null,
+            _id: '3dc0520def7ba25940a17438dcc4877b',
           },
         },
       ]}
