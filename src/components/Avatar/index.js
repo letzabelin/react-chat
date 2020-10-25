@@ -11,7 +11,7 @@ const Avatar = ({ user }) => {
       alt={`${user.fullname} avatar`}
     />
   } else {
-    const { color: original, colorLighten: lighten } = generateAvatarFromHash('3dc0520def7ba25940a17438dcc4877b')
+    const { color: original, colorLighten: lighten } = generateAvatarFromHash(user._id)
     const fullnameFirstChar = user.fullname[0].toUpperCase();
     return (
       <div

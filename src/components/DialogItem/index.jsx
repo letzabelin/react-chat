@@ -7,7 +7,6 @@ import isThisYear from 'date-fns/isThisYear';
 import ruLocale from 'date-fns/locale/ru';
 
 import { IconReaded, Avatar } from '../';
-import './DialogItem.scss';
 
 const getMessageTime = (created_at) => {
   if (isToday(created_at)) {
