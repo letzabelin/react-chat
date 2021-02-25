@@ -19,7 +19,11 @@ const ChatInput = () => {
       />
       <div className="chat-input__actions">
         <Button type="link" shape="circle" icon={<CameraOutlined />} />
-        {value ? <Button type="link" shape="circle" icon={<SendOutlined />} /> : <Button type="link" shape="circle" icon={<AudioOutlined />} />}
+        {value ? (
+          <Button type="link" shape="circle" icon={<SendOutlined />} />
+        ) : (
+          <Button type="link" shape="circle" icon={<AudioOutlined />} />
+        )}
       </div>
     </div>
   );
